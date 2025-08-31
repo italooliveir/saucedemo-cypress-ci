@@ -26,8 +26,8 @@ Antes de começar, você precisa ter instalado na sua máquina:
 ---
 
 ## 📦 Instalação e Execução
+## 📦 Instalação e Execução
 
-```bash
 # Clone o repositório
 git clone https://github.com/italooliveir/saucedemo-cypress-ci.git
 
@@ -43,47 +43,42 @@ npx cypress open
 # Ou execute os testes em modo headless
 npx cypress run
 
+
 🧪 Testes Implementados
 ✅ Cenários Positivos
 
-Login com credenciais válidas
-
-Adição de produtos ao carrinho (em andamento)
-
-Fluxo de checkout (planejado)
+- Login com credenciais válidas (usando comando personalizado)
+- Adição de produtos ao carrinho
+- Fluxo de checkout
 
 ❌ Cenários Negativos
 
-Login com credenciais inválidas
+- Login com credenciais inválidas
+- Login com campos vazios
+- Tentativa de checkout sem produtos
 
-Login com campos vazios
-
-Tentativa de checkout sem produtos (planejado)
 
 📂 Estrutura do Projeto
 
 Estrutura inicial do projeto (padrão do Cypress):
 
 cypress/
-  e2e/            # Casos de teste
-  fixtures/       # Massa de dados
-  support/        # Configurações e comandos customizados
+  e2e/            # Todos os testes: login, carrinho, checkout
+  support/        # Comando personalizado de login
 
 🔄 Futuras Implementações
 
-Integração com Cypress Cloud
-
-Relatórios de testes (ex.: mochawesome / allure)
-
-Pipeline de CI/CD com GitHub Actions
+- Integração com Cypress Cloud (opcional)
+- Relatórios de testes (opcional)
+- Pipeline de CI/CD (opcional)
 
 👤 Autor
 
 Ítalo Oliveira
 
-LinkedIn:https://www.linkedin.com/in/italo-oliveira-281a76239/
+- [LinkedIn](https://www.linkedin.com/in/italo-oliveira-281a76239/)
+- [GitHub](https://github.com/italooliveir)
 
-GitHub:https://github.com/italooliveir
 
 📄 Licença
 
