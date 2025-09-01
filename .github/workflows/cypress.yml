@@ -11,19 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout do código
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Configurar Node.js (Node 18 recomendado)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 18
 
+      # 3️⃣ Instalar dependências
       - name: Install dependencies
         run: npm install
 
+      # 4️⃣ Cache opcional do npm
+      - name: Cache npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 5️⃣ Executar Cypress (ação oficial)
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          install: true
-          browser: chrome
+          install: true        # garante instalação e permissões
+          browser: chrome      # opcional, Electron por padrão
