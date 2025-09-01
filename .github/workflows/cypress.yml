@@ -11,23 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Pega o código do repositório
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Configura Node.js (recomendo Node 18)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # 3️⃣ Instala as dependências do projeto
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      # 4️⃣ Executa os testes Cypress usando a Action oficial
+      - name: Forçar instalação do Cypress
+        run: npx cypress install --force
+
+      - name: Ajustar permissão do Cypress
+        run: chmod +x ./node_modules/.bin/cypress
+
       - name: Run Cypress tests
-        uses: cypress-io/github-action@v6
-        with:
-          install: true       # força instalação e corrige permissão
-          browser: chrome     # roda os testes no Chrome
+        run: npx cypress run --browser chrome
