@@ -1,74 +1,85 @@
-🧪 saucedemo-cypress-ci
+# 🧪 Saucedemo Cypress CI
 
+Automação de testes end-to-end no site [SauceDemo](https://www.saucedemo.com/) utilizando **Cypress**, com execução local, relatórios visuais, gravação de vídeos e integração contínua via **GitHub Actions**.  
+Este projeto foi desenvolvido como portfólio profissional e prática de automação de testes modernos.
 
+---
 
+## 📋 Descrição
 
+O objetivo é validar funcionalidades críticas do SauceDemo, cobrindo **cenários positivos e negativos**.  
+A automação inclui:
 
+- Login com diferentes credenciais  
+- Fluxo de compra completo (carrinho → checkout → finalização)  
+- Tratamento de erros e restrições de acesso  
+- Relatórios visuais detalhados com **Mochawesome**  
+- Gravação automática de **vídeos e screenshots** de cada execução  
+- Execução contínua em **CI/CD** com GitHub Actions  
 
+---
 
+## 🚀 Tecnologias
 
-📋 Descrição do Projeto
+- Node.js v24.1.0  
+- Cypress v15.0.0  
+- Mochawesome (relatórios HTML/JSON)  
+- GitHub Actions (CI/CD)  
+- Google Chrome v139.0.7258.155  
 
-Automação de testes end-to-end no site SauceDemo
- utilizando Cypress, com execução local, geração de relatórios visuais e integração contínua via GitHub Actions.
-O projeto serve como portfólio profissional e prática de automação de testes.
+---
 
-🚀 Tecnologias Utilizadas
+## 🔧 Pré-requisitos
 
-Node.js
- v24.1.0
+Antes de começar, instale em sua máquina:
 
-Cypress
- v15.0.0
+- [Node.js](https://nodejs.org/) (>= v24.1.0)  
+- npm (vem junto com o Node.js)  
+- Git  
 
-Mochawesome (relatórios visuais)
+---
 
-Navegador: Chrome v139.0.7258.155
+## 📦 Instalação
 
-🔧 Pré-requisitos
-
-Antes de começar, você precisa ter instalado na sua máquina:
-
-Node.js
- (>= v24.1.0)
-
-npm
-
-📦 Instalação e Execução
+```bash
 # Clone o repositório
 git clone https://github.com/italooliveir/saucedemo-cypress-ci.git
 
-# Acesse a pasta do projeto
+# Acesse a pasta
 cd saucedemo-cypress-ci
 
 # Instale as dependências
 npm ci
-
-🏃‍♂️ Executar os testes
-# Executa todos os testes
+▶️ Execução
+bash
+Copiar código
+# Executa todos os testes em modo headless
 npm run test
 
-# Ou separadamente:
-npm run cy:run        # Roda os testes
-npm run report         # Gera relatório Mochawesome
+# Roda somente os testes
+npm run cy:run
 
+# Gera o relatório Mochawesome
+npm run report
+📍 Saídas dos testes
 
-Os relatórios são gerados em cypress/reports/html/index.html.
+Relatórios: cypress/reports/html/index.html
 
-Arquivos JSON intermediários ficam em cypress/reports/report.json.
+JSON: cypress/reports/report.json
+
+Vídeos: cypress/videos/
+
+Screenshots (em caso de falha): cypress/screenshots/
 
 🧪 Testes Implementados
-
 ✅ Cenários Positivos
-
-Login com credenciais válidas (usando comando personalizado)
+Login com credenciais válidas (comando customizado)
 
 Adição de produtos ao carrinho
 
-Fluxo de checkout
+Fluxo completo de checkout
 
 ❌ Cenários Negativos
-
 Login com credenciais inválidas
 
 Login com campos vazios
@@ -76,46 +87,33 @@ Login com campos vazios
 Tentativa de checkout sem produtos
 
 📊 Relatórios e CI/CD
+Relatórios visuais gerados com Mochawesome
 
-Relatórios visuais com Mochawesome.
+Workflow automatizado com GitHub Actions (.github/workflows/cypress.yml)
 
-Cada execução no GitHub Actions gera um artefato chamado mochawesome-report.
+Instala dependências
 
-Workflow .github/workflows/cypress.yml executa automaticamente em push ou pull request na branch main:
+Executa os testes Cypress
 
-Checkout do repositório
+Gera relatórios Mochawesome
 
-Instalação das dependências
+Armazena vídeos, screenshots e relatórios como artefatos
 
-Execução dos testes Cypress
-
-Geração do relatório Mochawesome
-
-Upload do relatório como artefato
-
-📂 Estrutura do Projeto
+📂 Estrutura
+bash
+Copiar código
 cypress/
-├── e2e/            # Testes: login, carrinho, checkout
-├── fixtures/       # Dados de teste
-├── support/        # Comandos personalizados
+├── e2e/            # Testes end-to-end (login, carrinho, checkout)
+├── fixtures/       # Massa de dados
+├── support/        # Comandos customizados
 ├── reports/        # Relatórios Mochawesome
-package.json
-package-lock.json
-cypress.config.js
-.github/workflows/cypress.yml
-
-🔄 Futuras Implementações
-
-Integração com Cypress Cloud
-
-Mais cenários de testes
-
-Melhorias visuais nos relatórios
-
-CI/CD completo com deploy de relatórios online
-
+├── videos/         # Gravações automáticas
+├── screenshots/    # Capturas em caso de falhas
+node_modules/       
+package.json        
+cypress.config.js   
+.github/workflows/  # Pipeline CI/CD
 👤 Autor
-
 Ítalo Oliveira
 
 LinkedIn
@@ -123,9 +121,9 @@ LinkedIn
 GitHub
 
 📄 Licença
-
 Este projeto está licenciado sob a licença MIT.
+Você pode usar, modificar e distribuir livremente, mantendo os devidos créditos ao autor.
 
-Você tem permissão para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do projeto, desde que o copyright e a permissão sejam incluídos em todas as cópias ou partes substanciais do software.
-
-O projeto é fornecido "NO ESTADO EM QUE SE ENCONTRA", sem garantias de qualquer tipo, expressas ou implícitas.
+ 
+👉 Essa versão está **finalizada**, com foco em **clareza, padronização e estética profissional**.  
+Ela já cobre: tecnologias, instalação, execução, testes, relatórios, CI/CD, estrutura e licença.  
